@@ -6,11 +6,13 @@ const uiSlice = createSlice({
     darkMode: false,
   },
   reducers: {
-    setDarkMode: (state, payload) => state.darkMode = !!payload,
+    toggleDarkMode: state => {
+      state.darkMode = !state.darkMode
+    },
   },
 })
 
-export const { setDarkMode } = uiSlice.actions
+export const { toggleDarkMode } = uiSlice.actions
 
 const getUiDomain = state => state.ui
 
