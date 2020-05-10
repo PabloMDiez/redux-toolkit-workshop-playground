@@ -11,6 +11,13 @@ const userSlice = createSlice({
     loading: false,
     currentUser: null,
   },
+  reducers: {
+    logout: state => {
+      state.loading = false
+      state.error = false
+      state.currentUser = null
+    },
+  },
   extraReducers: {
     [login.pending]: state => {
       state.loading = true
@@ -36,4 +43,5 @@ export const hasLoginError = createSelector(getUserDomain, ({ error }) => error)
 export const getCurrentUserName = createSelector(getCurrentUser, user => user.name)
 export const isLoggedIn = createSelector(getCurrentUser, user => !!user)
 
+export const { logout } = userSlice.actions
 export default userSlice.reducer
