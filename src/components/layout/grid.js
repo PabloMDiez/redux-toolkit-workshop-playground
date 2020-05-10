@@ -7,10 +7,11 @@ const Grid = styled.div`
     'header  header'
     'sidebar content'
   ;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 2fr 8fr;
   grid-template-rows: auto 1fr;
   grid-gap: 8px;
   background-color: ${props => props.darkMode ? '#444' : '#DDD'};
+  transition: all 0.2s;
 `
 
 export default Grid
