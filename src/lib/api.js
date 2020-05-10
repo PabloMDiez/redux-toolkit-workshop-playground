@@ -18,5 +18,5 @@ export const apiLogin = ({ username, password }) => new Promise((resolve, reject
       return reject()
     }
     resolve(removePassword(user))
-  })
+  }, 2000)
 })
