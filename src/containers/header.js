@@ -1,10 +1,14 @@
 import { connect } from 'react-redux'
 
 import Header from '../components/header'
-import { getDarkMode } from '../store/ui'
+import { getDarkMode, toggleDarkMode } from '../store/ui'
 
 const mapStateToProps = state => ({
   darkMode: getDarkMode(state),
 })
 
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = {
+  toggleDarkMode,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
