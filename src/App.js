@@ -1,17 +1,22 @@
 import React from 'react';
-import Content from './components/content'
-import Header from './components/header'
-import Sidebar from './components/sidebar'
-import Grid from './components/layout/grid'
+import { Provider } from 'react-redux'
+
+import Header from './containers/header'
+import Sidebar from './containers/sidebar'
+import Content from './containers/content'
+import Grid from './containers/layout/grid'
+
+import store from './store'
 
 const App = () => {
-  const darkMode = false
   return (
-    <Grid darkMode={darkMode} >
-      <Header darkMode={darkMode} />
-      <Sidebar darkMode={darkMode} />
-      <Content darkMode={darkMode} />
-    </Grid>
+    <Provider store={store}>
+      <Grid>
+        <Header/>
+        <Sidebar/>
+        <Content/>
+      </Grid>
+    </Provider>
   )
 }
 
