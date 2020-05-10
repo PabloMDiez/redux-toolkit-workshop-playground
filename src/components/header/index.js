@@ -12,10 +12,6 @@ const AppTitle = styled.h1`
   flex-grow: 1;
 `
 
-const AppControls = styled.div`
-  align-self: center;
-`
-
 const Header = ({ darkMode, toggleDarkMode }) => {
   return (
     <HeaderBlock
@@ -23,9 +19,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
       gridArea='header'
     >
       <AppTitle>Header here</AppTitle>
-      <AppControls>
-        <button onClick={toggleDarkMode}>Switch to {darkMode ? 'light' : 'dark'} mode</button>
-      </AppControls>
+      <button onClick={toggleDarkMode}>Switch to {darkMode ? 'light' : 'dark'} mode</button>
     </HeaderBlock>
   )
 }
