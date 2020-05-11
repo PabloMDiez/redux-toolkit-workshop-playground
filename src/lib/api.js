@@ -11,12 +11,21 @@ const removePassword = user => {
   return userData
 }
 
-export const apiLogin = ({ username, password }) => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const user = usersMap.find(user => user.username === username && user.password === password)
-    if (!user) {
-      return reject()
-    }
-    resolve(removePassword(user))
-  }, 2000)
-})
+class API {
+  constructor(apiBaseUrl) {
+    this.apiBaseUrl = apiBaseUrl
+  }
+
+  login = ({ username, password }) => new Promise((resolve, reject) => {
+    console.log(`API (base: ${this.apiBaseUrl}): login`)
+    setTimeout(() => {
+      const user = usersMap.find(user => user.username === username && user.password === password)
+      if (!user) {
+        return reject()
+      }
+      resolve(removePassword(user))
+    }, 2000)
+  })
+}
+
+export default API

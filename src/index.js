@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <App apiBaseUrl='myBaseUrl' />
   </React.StrictMode>,
   document.getElementById('root')
 );

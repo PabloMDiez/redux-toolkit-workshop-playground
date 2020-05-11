@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import ui from './ui'
 import user from './user'
 
@@ -8,8 +8,15 @@ const rootReducer = combineReducers({
   user,
 })
 
-const store = configureStore({
+const initializeStore = api => configureStore({
   reducer: rootReducer,
+  middleware: [
+    ...getDefaultMiddleware({
+      thunk: {
+        extraArgument: { API: api },
+      },
+    }),
+  ],
 })
 
-export default store
+export default initializeStore
