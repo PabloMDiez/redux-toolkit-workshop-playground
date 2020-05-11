@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit'
-import { apiLogin } from '../../lib/api'
 
 export const login = createAsyncThunk('users/login',
-  async ({ username, password }) => apiLogin({ username, password }))
+  async ({ username, password }, { extra: { API } }) => API.login({ username, password }))
 
 const userSlice = createSlice({
   name: 'user',
@@ -43,5 +42,6 @@ export const hasLoginError = createSelector(getUserDomain, ({ error }) => error)
 export const getCurrentUserName = createSelector(getCurrentUser, user => user.name)
 export const isLoggedIn = createSelector(getCurrentUser, user => !!user)
 
-export const { logout } = userSlice.actions
+export const logout = () => userSlice.actions.logout()
+
 export default userSlice.reducer

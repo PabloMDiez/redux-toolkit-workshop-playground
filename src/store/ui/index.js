@@ -12,7 +12,7 @@ const uiSlice = createSlice({
   },
 })
 
-export const { toggleDarkMode } = uiSlice.actions
+export const toggleDarkMode = () => uiSlice.actions.toggleDarkMode()
 
 const getUiDomain = state => state.ui
 
