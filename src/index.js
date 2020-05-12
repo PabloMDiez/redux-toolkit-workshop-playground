@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
 import { createGlobalStyle } from 'styled-components'
+
+import App from './App'
 
 const GlobalStyle = createGlobalStyle`
   html, body, #root {
@@ -14,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <App apiBaseUrl='myBaseUrl'/>
+    <GlobalStyle />
+    <App apiBaseUrl='myBaseUrl' />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 )

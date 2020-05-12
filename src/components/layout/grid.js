@@ -5,12 +5,11 @@ const Grid = styled.div`
   height: 100%;
   grid-template-areas:
     'header  header'
-    'sidebar content'
-  ;
+    'sidebar content';
   grid-template-columns: 2fr 8fr;
   grid-template-rows: auto 1fr;
   grid-gap: 8px;
-  background-color: ${props => props.darkMode ? '#444' : '#DDD'};
+  background-color: ${props => (props.darkMode ? '#444' : '#DDD')};
   transition: all 0.2s;
 `
 

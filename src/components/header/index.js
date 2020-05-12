@@ -15,12 +15,11 @@ const AppTitle = styled.h1`
 
 const Header = ({ darkMode, isLoggedIn, logout, toggleDarkMode }) => {
   return (
-    <HeaderBlock
-      darkMode={darkMode}
-      gridArea='header'
-    >
+    <HeaderBlock darkMode={darkMode} gridArea='header'>
       <AppTitle>Header here</AppTitle>
-      <button onClick={toggleDarkMode}>Switch to {darkMode ? 'light' : 'dark'} mode</button>
+      <button onClick={toggleDarkMode}>
+        Switch to {darkMode ? 'light' : 'dark'} mode
+      </button>
       {isLoggedIn && <button onClick={logout}>Logout</button>}
     </HeaderBlock>
   )

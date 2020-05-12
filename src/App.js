@@ -16,9 +16,9 @@ const App = ({ apiBaseUrl }) => {
   return (
     <Provider store={store}>
       <Grid>
-        <Header/>
-        <Sidebar/>
-        <Content/>
+        <Header />
+        <Sidebar />
+        <Content />
       </Grid>
     </Provider>
   )

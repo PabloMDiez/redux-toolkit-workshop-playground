@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import Block from '../layout/block'
 
 const Sidebar = ({ darkMode }) => {
   return (
-    <Block
-      darkMode={darkMode}
-      gridArea='sidebar'
-    >
+    <Block darkMode={darkMode} gridArea='sidebar'>
       Sidebar here
     </Block>
   )

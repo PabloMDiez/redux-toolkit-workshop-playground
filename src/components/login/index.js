@@ -40,8 +40,12 @@ const Login = ({ isLoggingIn, loginError, login }) => {
       <input disabled={isLoggingIn} id='username' {...bindUsername} />
       <label htmlFor='password'>Password:</label>
       <input disabled={isLoggingIn} id='password' {...bindPassword} />
-      <button disabled={isLoggingIn}>{isLoggingIn ? 'Logging in...' : 'Sign in'}</button>
-      {loginError && <ErrorMessage>Those credentials are not valid</ErrorMessage>}
+      <button disabled={isLoggingIn}>
+        {isLoggingIn ? 'Logging in...' : 'Sign in'}
+      </button>
+      {loginError && (
+        <ErrorMessage>Those credentials are not valid</ErrorMessage>
+      )}
     </NiceForm>
   )
 }

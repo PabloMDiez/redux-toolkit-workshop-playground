@@ -8,15 +8,16 @@ const rootReducer = combineReducers({
   [user.name]: user.reducer,
 })
 
-const initializeStore = api => configureStore({
-  reducer: rootReducer,
-  middleware: [
-    ...getDefaultMiddleware({
-      thunk: {
-        extraArgument: { API: api },
-      },
-    }),
-  ],
-})
+const initializeStore = api =>
+  configureStore({
+    reducer: rootReducer,
+    middleware: [
+      ...getDefaultMiddleware({
+        thunk: {
+          extraArgument: { API: api },
+        },
+      }),
+    ],
+  })
 
 export default initializeStore

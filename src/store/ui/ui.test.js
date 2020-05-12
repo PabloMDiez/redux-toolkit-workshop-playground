@@ -1,4 +1,5 @@
-import initializeStore from '../index'
+import initializeStore from '../'
+
 import { getDarkMode, toggleDarkMode } from './'
 
 describe('store/ui', () => {

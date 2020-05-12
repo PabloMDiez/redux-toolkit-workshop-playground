@@ -1,5 +1,14 @@
-import initializeStore from '../index'
-import { getCurrentUser, getCurrentUserName, hasLoginError, isLoggedIn, isLoggingIn, login, logout } from './'
+import initializeStore from '../'
+
+import {
+  getCurrentUser,
+  getCurrentUserName,
+  hasLoginError,
+  isLoggedIn,
+  isLoggingIn,
+  login,
+  logout,
+} from './'
 
 describe('store/user', () => {
   beforeEach(jest.clearAllMocks)
@@ -33,10 +42,12 @@ describe('store/user', () => {
 
       mockApi.login.mockResolvedValueOnce(user)
 
-      await dispatch(login({
-        username: 'asd',
-        password: 'lamba',
-      }))
+      await dispatch(
+        login({
+          username: 'asd',
+          password: 'lamba',
+        }),
+      )
 
       expect(getCurrentUser(getState())).toBe(user)
       expect(getCurrentUserName(getState())).toBe(user.name)
