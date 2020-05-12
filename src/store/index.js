@@ -4,8 +4,8 @@ import ui from './ui'
 import user from './user'
 
 const rootReducer = combineReducers({
-  ui,
-  user,
+  [ui.name]: ui.reducer,
+  [user.name]: user.reducer,
 })
 
 const initializeStore = api => configureStore({

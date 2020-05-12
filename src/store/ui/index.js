@@ -14,8 +14,8 @@ const uiSlice = createSlice({
 
 export const toggleDarkMode = () => uiSlice.actions.toggleDarkMode()
 
-const getUiDomain = state => state.ui
+const getUiDomain = state => state[uiSlice.name]
 
 export const getDarkMode = createSelector(getUiDomain, state => state.darkMode)
 
-export default uiSlice.reducer
+export default uiSlice

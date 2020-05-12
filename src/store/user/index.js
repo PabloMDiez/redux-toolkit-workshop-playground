@@ -33,7 +33,7 @@ const userSlice = createSlice({
   }
 })
 
-const getUserDomain = state => state.user
+const getUserDomain = state => state[userSlice.name]
 
 export const getCurrentUser = createSelector(getUserDomain, state => state.currentUser)
 export const isLoggingIn = createSelector(getUserDomain, ({ loading }) => loading)
@@ -44,4 +44,4 @@ export const isLoggedIn = createSelector(getCurrentUser, user => !!user)
 
 export const logout = () => userSlice.actions.logout()
 
-export default userSlice.reducer
+export default userSlice
