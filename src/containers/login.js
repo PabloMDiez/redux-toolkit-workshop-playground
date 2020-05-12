@@ -1,10 +1,12 @@
-import Login from '../components/login'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+
+import Login from '../components/login'
 import { hasLoginError, isLoggingIn, login } from '../store/user'
 
-const mapStateToProps = state => ({
-  isLoggingIn: isLoggingIn(state),
-  loginError: hasLoginError(state),
+const mapStateToProps = createStructuredSelector({
+  isLoggingIn,
+  loginError: hasLoginError,
 })
 
 const mapDispatchToProps = {
