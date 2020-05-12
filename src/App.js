@@ -28,4 +28,4 @@ App.propTypes = {
   apiBaseUrl: PropTypes.string,
 }
 
-export default App;
+export default App

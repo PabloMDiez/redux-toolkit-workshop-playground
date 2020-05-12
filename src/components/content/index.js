@@ -10,7 +10,7 @@ const Content = ({ isLoggedIn, darkMode }) => {
       darkMode={darkMode}
       gridArea='content'
     >
-      {isLoggedIn ? <Welcome /> : <Login />}
+      {isLoggedIn ? <Welcome/> : <Login/>}
     </Block>
   )
 }

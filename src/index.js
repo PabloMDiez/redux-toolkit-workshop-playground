@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -14,8 +14,8 @@ const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App apiBaseUrl='myBaseUrl' />
+    <GlobalStyle/>
+    <App apiBaseUrl='myBaseUrl'/>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)

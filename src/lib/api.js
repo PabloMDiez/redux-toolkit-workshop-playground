@@ -12,7 +12,7 @@ const removePassword = user => {
 }
 
 class API {
-  constructor(apiBaseUrl) {
+  constructor (apiBaseUrl) {
     this.apiBaseUrl = apiBaseUrl
   }
 

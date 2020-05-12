@@ -33,6 +33,7 @@ const Login = ({ isLoggingIn, loginError, login }) => {
       password: bindPassword.value,
     })
   }
+
   return (
     <NiceForm onSubmit={handleSubmit}>
       <label htmlFor='username'>Username:</label>
