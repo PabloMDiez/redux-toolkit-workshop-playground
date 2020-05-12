@@ -24,7 +24,7 @@ class API {
         return reject()
       }
       resolve(removePassword(user))
-    }, 2000)
+    }, 1000)
   })
 }
 
