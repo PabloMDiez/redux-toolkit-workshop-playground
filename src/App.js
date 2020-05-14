@@ -6,13 +6,11 @@ import Header from './containers/header'
 import Sidebar from './containers/sidebar'
 import Content from './containers/content'
 import Grid from './containers/layout/grid'
-import API from './lib/api'
 
 import initializeStore from './store'
 
+const store = initializeStore()
 const App = ({ apiBaseUrl }) => {
-  const api = new API(apiBaseUrl)
-  const store = initializeStore(api)
   return (
     <Provider store={store}>
       <Grid>

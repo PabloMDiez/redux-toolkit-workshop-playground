@@ -1,23 +1,15 @@
 import { combineReducers } from 'redux'
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import ui from './ui'
-import user from './user'
+import { configureStore } from '@reduxjs/toolkit'
 
-const rootReducer = combineReducers({
-  [ui.name]: ui.reducer,
-  [user.name]: user.reducer,
-})
+// Tasks:
+// - Import our reducers here
+// - Bonus: configure API as thunk's extraArguments
 
-const initializeStore = api =>
+const rootReducer = combineReducers({})
+
+const initializeStore = () =>
   configureStore({
     reducer: rootReducer,
-    middleware: [
-      ...getDefaultMiddleware({
-        thunk: {
-          extraArgument: { API: api },
-        },
-      }),
-    ],
   })
 
 export default initializeStore

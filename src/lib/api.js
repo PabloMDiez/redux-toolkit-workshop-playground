@@ -2,7 +2,7 @@ const usersMap = [
   {
     username: 'test',
     password: 'test',
-    name: 'Pablin',
+    name: 'Frank N. Furter',
   },
 ]
 
@@ -12,13 +12,8 @@ const removePassword = user => {
 }
 
 class API {
-  constructor (apiBaseUrl) {
-    this.apiBaseUrl = apiBaseUrl
-  }
-
-  login = ({ username, password }) =>
+  static login = ({ username, password }) =>
     new Promise((resolve, reject) => {
-      console.log(`API (base: ${this.apiBaseUrl}): login`)
       setTimeout(() => {
         const user = usersMap.find(
           user => user.username === username && user.password === password,

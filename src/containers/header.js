@@ -2,17 +2,15 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import Header from '../components/header'
-import { getDarkMode, toggleDarkMode } from '../store/ui'
-import { isLoggedIn, logout } from '../store/user'
 
 const mapStateToProps = createStructuredSelector({
-  isLoggedIn,
-  darkMode: getDarkMode,
+  isLoggedIn: () => false,
+  darkMode: () => false,
 })
 
 const mapDispatchToProps = {
-  logout,
-  toggleDarkMode,
+  logout: () => ({ type: 'NOT_IMPLEMENTED' }),
+  toggleDarkMode: () => ({ type: 'NOT_IMPLEMENTED' }),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

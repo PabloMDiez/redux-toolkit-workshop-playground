@@ -2,15 +2,14 @@ import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
 import Login from '../components/login'
-import { hasLoginError, isLoggingIn, login } from '../store/user'
 
 const mapStateToProps = createStructuredSelector({
-  isLoggingIn,
-  loginError: hasLoginError,
+  isLoggingIn: () => false,
+  loginError: () => false,
 })
 
 const mapDispatchToProps = {
-  login,
+  login: () => ({ type: 'NOT_IMPLEMENTED' }),
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

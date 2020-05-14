@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -12,13 +12,12 @@ const NiceForm = styled.form`
 const ErrorMessage = styled.span`
   color: crimson;
 `
-
+// Tasks:
+// - Implement useInput hook
 const useInput = () => {
-  const [value, setValue] = useState('')
-  const onChange = event => setValue(event.target.value)
   return {
-    onChange,
-    value,
+    onChange: () => alert('not_implemented!'),
+    value: 'NOT_IMPLEMENTED',
   }
 }
 
