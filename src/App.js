@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 
-import Header from './containers/header'
+import Header from './components/header'
 import Sidebar from './containers/sidebar'
 import Content from './containers/content'
 import Grid from './containers/layout/grid'
