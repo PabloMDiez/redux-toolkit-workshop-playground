@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import Header from '../components/header'
-import { getDarkMode, toggleDarkMode } from '../store/ui'
-import { isLoggedIn, logout } from '../store/user'
+import { getDarkMode, toggleDarkMode } from '../../store/ui'
+import { isLoggedIn, logout } from '../../store/user'
+
+import Header from './header'
 
 const mapStateToProps = createStructuredSelector({
   isLoggedIn,

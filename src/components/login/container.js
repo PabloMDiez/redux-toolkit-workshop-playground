@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import Login from '../components/login'
-import { hasLoginError, isLoggingIn, login } from '../store/user'
+import { hasLoginError, isLoggingIn, login } from '../../store/user'
+
+import Login from './login'
 
 const mapStateToProps = createStructuredSelector({
   isLoggingIn,

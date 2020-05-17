@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import Sidebar from '../components/sidebar'
-import { getDarkMode } from '../store/ui'
+import { getDarkMode } from '../../store/ui'
+
+import Sidebar from './sidebar'
 
 const mapStateToProps = createStructuredSelector({
   darkMode: getDarkMode,

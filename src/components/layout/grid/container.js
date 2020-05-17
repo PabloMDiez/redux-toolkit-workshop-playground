@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 
-import Grid from '../../components/layout/grid'
-import { getDarkMode } from '../../store/ui'
+import { getDarkMode } from '../../../store/ui'
+
+import Grid from './grid'
 
 const mapStateToProps = state => ({
   darkMode: getDarkMode(state),

@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
-import Welcome from '../components/welcome'
-import { getCurrentUserName } from '../store/user'
+import { getCurrentUserName } from '../../store/user'
+
+import Welcome from './welcome'
 
 const mapStateToProps = createStructuredSelector({
   userName: getCurrentUserName,
