@@ -39,7 +39,7 @@ const Login = ({ isLoggingIn, loginError, login }) => {
       <label htmlFor='username'>Username:</label>
       <input disabled={isLoggingIn} id='username' {...bindUsername} />
       <label htmlFor='password'>Password:</label>
-      <input disabled={isLoggingIn} id='password' {...bindPassword} />
+      <input disabled={isLoggingIn} id='password' type='password' {...bindPassword} />
       <button disabled={isLoggingIn}>
         {isLoggingIn ? 'Logging in...' : 'Sign in'}
       </button>
