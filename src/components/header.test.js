@@ -1,9 +1,6 @@
 import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 
-import { getDarkMode, toggleDarkMode } from '../store/ui'
-import { isLoggedIn, logout } from '../store/user'
-
 import Header from './header'
 
 jest.mock('../store/ui')
@@ -15,28 +12,33 @@ jest.mock('react-redux', () => ({
   useDispatch: () => mockDispatch,
 }))
 
+const mockSelectors = ({
+  darkMode,
+  loggedIn,
+}) => ({
+  getDarkMode: () => darkMode || false,
+  isLoggedIn: () => loggedIn || false,
+})
+
 describe('Header', () => {
   beforeEach(() => jest.resetAllMocks())
 
   describe('logout button', () => {
-    getDarkMode.mockResolvedValue(false)
-
     it('should not render the logout button when not logged in', async () => {
-      render(<Header />)
+      render(<Header {...mockSelectors({ loggedIn: false })}/>)
       const logoutButton = screen.queryByRole('button', { name: 'Logout' })
       expect(logoutButton).not.toBeInTheDocument()
     })
 
     it('should render the logout button when logged in', async () => {
-      isLoggedIn.mockResolvedValue(true)
-      render(<Header />)
+      render(<Header {...mockSelectors({ loggedIn: true })}/>)
       const logoutButton = screen.queryByRole('button', { name: 'Logout' })
       expect(logoutButton).toBeInTheDocument()
     })
 
     it('clicking the logout button triggers logout action', async () => {
-      isLoggedIn.mockResolvedValue(true)
-      render(<Header />)
+      const logout = jest.fn()
+      render(<Header {...mockSelectors({ loggedIn: true })} logout={logout} />)
       const logoutButton = screen.queryByRole('button', { name: 'Logout' })
 
       fireEvent.click(logoutButton)
@@ -52,9 +54,8 @@ describe('Header', () => {
     ])(
       'shows the "%s" toggle when darkMode=%s and fires the toggle action',
       (name, darkMode) => {
-        getDarkMode.mockResolvedValue(darkMode)
-
-        render(<Header />)
+        const toggleDarkMode = jest.fn()
+        render(<Header {...mockSelectors({ darkMode })} toggleDarkMode={toggleDarkMode} />)
         const toggleDarkModeButton = screen.queryByRole('button')
 
         expect(toggleDarkModeButton).toBeInTheDocument()
