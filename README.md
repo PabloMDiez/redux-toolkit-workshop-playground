@@ -1,5 +1,7 @@
 # redux-toolkit-workshop-playground
-## Exploration 1:
+## Exploration 1: using `useDispatch` and `useSelector` hooks.
+
+> Notice: only `src/components/header.js` has been migrated. 
 
 Some thoughts and opinions
 - This introduces the need of shadowing names, or coming up with different (but similar ones)
