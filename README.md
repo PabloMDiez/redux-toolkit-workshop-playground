@@ -1,5 +1,6 @@
 # redux-toolkit-workshop-playground
 ## Exploration 3: putting the container closer to the component.
+Also, `index.js` exports the `container` by default.
 
 Since containers and components have a lot to do, what if they where closer together?
 
